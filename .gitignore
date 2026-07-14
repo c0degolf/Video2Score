@@ -3,5 +3,6 @@ __pycache__
 *.json
 *.mid
 *.mp4
-
+*.mp3
+*.musicxml
 GEMINI.md
