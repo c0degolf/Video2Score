@@ -4,14 +4,6 @@ NUM_KEYS = 88
 NOTE_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
 
-def midi_to_key_index(midi_note: int) -> int:
-    return midi_note - MIDI_MIN
-
-
-def is_black_key(midi_note: int) -> bool:
-    return midi_note % 12 in (1, 3, 6, 8, 10)
-
-
 def midi_to_name(midi_note: int) -> str:
     name = NOTE_NAMES[midi_note % 12]
     octave = midi_note // 12 - 1
@@ -52,8 +44,8 @@ def generate_88_key_layout(x_left, x_right, y_top, white_h,
     black_det_y_center_ratio = 0.75
 
     for midi in range(21, 109):  # A0 ~ C8
-        black = is_black_key(midi)
-        if not black:
+        is_black = midi % 12 in (1, 3, 6, 8, 10)
+        if not is_black:
             # White key original region and center
             x_full = x_left + white_index * white_w
             cx = x_full + white_w / 2
