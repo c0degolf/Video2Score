@@ -1,9 +1,19 @@
-__pycache__
-.vscode
+# 시스템 및 에디터 파일
+__pycache__/
+.vscode/
+
+# 미디어 및 데이터 파일 (확장자 기반 무시)
 *.json
 *.mid
 *.mp4
 *.webm
 *.mp3
 *.musicxml
+
+# 프로젝트 문서
 GEMINI.md
+
+# 빈 폴더 구조 유지 (source, data, output)
+!/source/.gitkeep
+!/data/.gitkeep
+!/output/.gitkeep
